@@ -3,7 +3,7 @@ import Dirctory from "../../components/directory/Dirctory";
 
 import "./homepage.styles.scss";
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
     <div className="homepage">
       <Dirctory />
