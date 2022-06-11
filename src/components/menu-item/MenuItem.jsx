@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "./menu-Item.scss";
 const MenuItem = ({ title, imageUrl, size, history, id, match }) => {
-  console.log(history);
   return (
     <div
       className={`${size} menu-item`}
@@ -14,7 +13,7 @@ const MenuItem = ({ title, imageUrl, size, history, id, match }) => {
       />
       <div className="content">
         <h1 className="title">{title.toUpperCase()}</h1>
-        <span className="subtitle">shop now</span>
+        <span className="subtitle">SHOP NOW</span>
       </div>
     </div>
   );
