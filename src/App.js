@@ -6,8 +6,26 @@ import { Route, Switch } from "react-router-dom";
 import Shop from "./pages/shop-page/Shop";
 import Header from "./components/header/Header";
 import SignInPage from "./pages/sign-in - sign-up/SignInPage";
+import { auth } from "./firebase/firebase";
 
 class App extends Component {
+  state = {
+    currentUser: null,
+  };
+
+  unsubscribeFromAuth = null;
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
+      this.setState({ currentUser: user });
+    });
+  }
+
+  componentWillUnmount = () => {
+    this.unsubscribeFromAuth();
+  }
+
+
+
   render() {
     return (
       <div>
