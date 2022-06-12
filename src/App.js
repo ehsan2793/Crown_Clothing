@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header currentUser={this.state.currentUser} />
         <Switch>
           <Route path="/signin" exact component={SignInPage} />
           <Route exact path="/Shop" component={Shop} />
